@@ -99,8 +99,8 @@ class Battle {
 		
 		// Set an array of messages.
 		$message = array(
-			'You used '.$character_atk.' which did '.$character_dmg.' damage to '.$monster->name,
-			'The '.$monster->name.' used '.$monster_atk.' which did '.$monster_dmg.' damage to you',
+			'You used <span style="font-weight: bold; color: #000000;">'.$character_atk.'</span> which did <span style="font-weight: bold; color: #8B0000;">'.$character_dmg.'</span> damage  to <span style="font-weight: bold; color: #2F4F4F;">'.$monster->name.'</span>',
+			'The <span style="font-weight: bold; color: #2F4F4F;">'.$monster->name.'</span> used <span style="font-weight: bold; color: #228B22;">'.$monster_atk.'</span> which did <span style="font-weight: bold; color: #D2691E;">'.$monster_dmg.'</span> damage to you',
 		);
 		
 		Message::set( Message::SUCCESS, $message );
