@@ -7,7 +7,7 @@
 		<h3>You:</h3>
 		
 <?php
-$image = 'assets/images/characters/' . $character->race->name.'/'.$character->class->name.'.png';
+$image = 'assets/images/characters/' . $character->race->name.'/'.$character->class->name.'_rearview.png';
 $image = strtolower($image);
 echo html::image($image);
 ?>

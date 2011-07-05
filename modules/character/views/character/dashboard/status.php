@@ -9,7 +9,7 @@
 <br />
 	</p>
 <?php
-$image = 'assets/images/characters/' . $character->race->name.'/'.$character->class->name.'.png';
+$image = 'assets/images/characters/' . $character->race->name.'/'.$character->class->name.'_frontview.png';
 $image = strtolower($image);
 echo html::image($image);
 ?>	
