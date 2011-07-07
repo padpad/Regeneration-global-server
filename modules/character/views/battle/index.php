@@ -67,9 +67,17 @@ echo html::image($image);
 		$ri = 255 - $r;
 		$gi = 255 - $g;
 		$bi = 255 - $b;
-		echo html::anchor( 'battle/attack?chr_atk='.$chr_atk_id, ' '.$atk_name.' ', array('style' => "color: rgb(".$r.",".$g.",".$b."); background-color: rgb(".$ri.",".$gi.",".$bi."); border: 1px solid black; padding: 5px;")); 
+		echo html::anchor( 'battle/attack?chr_atk='.$chr_atk_id, ' '.$atk_name.' ', array('style' => "color: rgb(".$r.",".$g.",".$b."); background-color: rgb(".$ri.",".$gi.",".$bi."); border: 1px solid black; padding: 5px;"));
 		$chr_atk_id++;
 	} ?><br />
-	<?php echo html::anchor( 'battle/run', 'Try to run away' ); ?><br />
+	<?php echo html::anchor( 'battle/run', 'Try to run away'); ?><br />
+	<?php
+	// background music
+ 	echo('<audio id="bg_music" loop="loop">
+   				<source src="assets/audio/battle_music/Promenade.wav" type="audio/wav" />
+  				 Your browser does not support the audio element.
+ 			</audio>');	
+ 	echo('<a id="sound_button" href="#"><img src="assets/images/icons/unmute.png"');	
+ 	?>
 	
 </div>

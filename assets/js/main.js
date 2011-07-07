@@ -82,8 +82,22 @@ $(function() {
 
 
 $(document).ready(function(){
+	/* AUDIO CLIENT LOADING */
+	// background music shuffle
+	$('#bg_music').attr('autoplay', "autoplay");
+	document.getElementById('bg_music').play();
 	
-
-
-	
+	$('#sound_button').click(function() {
+		if($('#sound_button img').attr('src') == "assets/images/icons/unmute.png"){	
+			document.getElementById('bg_music').pause();
+			$('#sound_button img').attr('src', "assets/images/icons/mute.png");
+		}
+		else if($('#sound_button img').attr('src') == "assets/images/icons/mute.png"){
+			document.getElementById('bg_music').play();
+			$('#sound_button img').attr('src', "assets/images/icons/unmute.png");
+		}
+		else{
+			alert("HTML5 Sound is not compatable with this browser at present");	
+		}
+	});	
 });
