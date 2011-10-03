@@ -69,7 +69,13 @@ echo html::image($image);
 		$bi = 255 - $b;
 		echo html::anchor( 'battle/attack?chr_atk='.$chr_atk_id, ' '.$atk_name.' ', array('style' => "color: rgb(".$r.",".$g.",".$b."); background-color: rgb(".$ri.",".$gi.",".$bi."); border: 1px solid black; padding: 5px;"));
 		$chr_atk_id++;
-	} ?><br />
+	}
+	echo('<audio id="tab_sound">
+   				<source src="assets/audio/menu_sounds/tab_hover.wav" type="audio/wav" />
+   				<source src="horse.mp3" type="audio/mp3" />
+  				 Your browser does not support the audio element.
+ 			</audio>'); 
+	?><br />
 	<?php echo html::anchor( 'battle/run', 'Try to run away'); ?><br />
 	<?php
 	// background music

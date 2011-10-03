@@ -82,7 +82,6 @@ $(function() {
 
 
 $(document).ready(function(){
-	/* AUDIO CLIENT LOADING */
 	// background music shuffle
 	$('#bg_music').attr('autoplay', "autoplay");
 	document.getElementById('bg_music').play();
@@ -99,5 +98,54 @@ $(document).ready(function(){
 		else{
 			alert("HTML5 Sound is not compatable with this browser at present");	
 		}
-	});	
+	});
+	$('.attack_tab').hover(function() {
+		// background-color modify
+		var ndx = /rgb[\(]([0-9]+),\s*([0-9]+),\s*([0-9]+)/i.exec($(this).css('background-color'));
+		var valuedvar = ndx[1] + 20;
+		if(valuedvar < 255){
+			ndx[1] = valuedvar;
+		}
+		var valuedvar = ndx[2] + 20;
+		if(valuedvar < 255){
+			ndx[2] = valuedvar;
+		}
+		var valuedvar = ndx[3] + 20;
+		if(valuedvar < 255){
+			ndx[3] = valuedvar;
+		}
+		$(this).css('background-color', "rgb("+ndx[1]+","+ndx[2]+","+ndx[3]+")");
+		// color modify
+		var ndx = /rgb[\(]([0-9]+),\s*([0-9]+),\s*([0-9]+)/i.exec($(this).css('color'));
+		var valuedvar = ndx[1] + 20;
+		if(valuedvar < 255){
+			ndx[1] = valuedvar;
+		}
+		var valuedvar = ndx[2] + 20;
+		if(valuedvar < 255){
+			ndx[2] = valuedvar;
+		}
+		var valuedvar = ndx[3] + 20;
+		if(valuedvar < 255){
+			ndx[3] = valuedvar;
+		}
+		$(this).css('color', "rgb("+ndx[1]+","+ndx[2]+","+ndx[3]+")");
+		// sound
+		$('#tab_sound').attr('src', "assets/audio/menu_sounds/tab_hover.wav");
+		document.getElementById('tab_sound').play();
+		// animation
+		$(this).animate({
+    		fontSize: "1.5em",
+    		borderWidth: "5px"
+  		}, 70 );
+	});
+	$('.attack_tab').mouseleave(function() {
+		// sound
+		$('#tab_sound').attr('src', "");
+		// animation
+		$(this).animate({
+    		fontSize: "1em",
+    		borderWidth: "1px"
+  		}, 70 );
+	});
 });
