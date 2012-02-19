@@ -86,6 +86,52 @@ $(document).ready(function(){
 	$('#bg_music').attr('autoplay', "autoplay");
 	document.getElementById('bg_music').play();
 	
+	/* function for activating slider */
+	$('#nav_slider').click(function() {
+		// hide obtrusive elements
+		$('body').css('backgroundImage', "none");
+		$('body').css('backgroundColor', "none");
+		$('#nav').css('display', "none");
+		// transform logo into slider
+		$('#logo').html("");
+		$('#logo').css('width', "93.5%");
+		$('#logo').css('top', "0");
+		$('#logo').css('height', "20px");
+		$('#logo').attr('href', "#");
+		$('#side-left').css('top', "20px");
+		$('#side').css('top', "20px");
+		$('#logo').css('backgroundImage', 'url("http://localhost:8888/modulargaming/assets/images/layout/bg.png")');
+		// animation
+		$('body').animate({
+    		marginTop: "20px",
+    		borderWidth: "1px"
+  		}, 70 );
+  		// prevents link from navigating away from page
+  		return false;
+	});
+	/* function for deactivating slider */
+	$('#logo').click(function() {
+		// hide obtrusive elements
+		$('body').css('backgroundImage', "url('http://localhost:8888/modulargaming/assets/images/layout/bg.png')");
+		$('body').css('backgroundColor', "none");
+		$('#nav').css('display', "block");
+		$('#side-left').css('top', "130px");
+		$('#side').css('top', "130px");
+		// change logo to original attributes
+		$('#logo').css('backgroundImage', 'url("http://localhost:8888/modulargaming/assets/images/layout/logo.png")');
+		$('#logo').attr('href', "/modulargaming/");
+		$('#logo').css('top', "23px");
+		$('#logo').css('width', "320px");
+		$('#logo').css('height', "59px");
+		// animation
+		$('body').animate({
+    		marginTop: "130px",
+    		borderWidth: "1px"
+  		}, 70 );
+  		// prevents link from navigating away from page
+  		return false;
+	});
+	
 	$('#sound_button').click(function() {
 		if($('#sound_button img').attr('src') == "assets/images/icons/unmute.png"){	
 			document.getElementById('bg_music').pause();
