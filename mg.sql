@@ -431,9 +431,9 @@ INSERT INTO `navigations` (`id`, `group_id`, `position`, `title`, `slug`) VALUES
 (9, 1, 6, 'Settings', 'account'),
 (10, 1, 8, 'Logout', 'account/logout'),
 (11, 2, 9, 'Dashboard', 'admin'),
-(12, 2, 10, 'Users', 'admin/users');
-(13, 0, 11, '&#187;', '#');
-(14, 1, 12, '&#187;', '#');
+(12, 2, 10, 'Users', 'admin/users'),
+(13, 0, 11, "&#187;", '#'),
+(14, 1, 12, "&#187;", '#');
 
 -- --------------------------------------------------------
 
